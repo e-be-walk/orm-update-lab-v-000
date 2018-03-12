@@ -23,6 +23,10 @@ class Student
       DB[:conn].execute(sql)
     end
 
+    def self.drop_table
+      DB[:conn].execute("DROP TABLE students;")
+    end
+
     def self.new_from_db
       new_student = self.new
       new_student.id = row[0]
@@ -71,10 +75,5 @@ class Student
 
       DB[:conn].execute(sql, self.name, self.grade, self.id)
     end
-
-    def self.drop_table
-      DB[:conn].execute("DROP TABLE students;")
-    end
-
 
 end
