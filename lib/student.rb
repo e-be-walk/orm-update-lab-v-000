@@ -20,7 +20,7 @@ class Student
         grade INTEGER
       )
       SQL
-      DB[:conn].execut(sql)
+      DB[:conn].execute(sql)
     end
 
     def self.create(name:, grade:)
